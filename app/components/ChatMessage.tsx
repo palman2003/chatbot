@@ -1,5 +1,6 @@
+"use client";
 import type { UIMessage } from 'ai';
-import MarkdownPreview from '@uiw/react-markdown-preview';
+import ReactMarkdown from "react-markdown";
 
 export default function ChatMessage({ message }: { message: UIMessage }) {
   const isUser = message.role === 'user';
@@ -17,7 +18,7 @@ export default function ChatMessage({ message }: { message: UIMessage }) {
             : 'bg-zinc-100 dark:bg-zinc-800 rounded-bl-md'
         }`}
       >
-       <MarkdownPreview source={text} style={{ padding: 16 }} />
+       <ReactMarkdown>{text}</ReactMarkdown>;
       </div>
     </div>
   );
